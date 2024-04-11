@@ -1,0 +1,108 @@
+<!-- Strings HTML Page By JennH -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Strings.Html</title> 
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: tan;
+        }
+        .center {
+          text-align: center;
+          padding: 20px;
+        }
+      </style>
+      
+      </head>
+<body>
+    
+    <h1>JennH's Palindrome Checker</h1>
+    
+    
+  
+</head>
+<body>
+  
+  <input type="text" id="word" placeholder="Enter Your Word or String">
+  <button type="button" id="check">CHECK</button>
+  <p id="result"></p>
+
+  <script>
+    const wordInput = document.getElementById('word');
+    const checkButton = document.getElementById('check');
+    const result = document.getElementById('result');
+
+    checkButton.addEventListener('click', () => {
+      const word = wordInput.value;
+      const reversedWord = word.split('').reverse().join('');
+
+      if (word === reversedWord) {
+        result.innerHTML = `${word} is a palindrome!`;
+      } else {
+        result.innerHTML = `${word} is not a palindrome.`;
+      }
+    });
+  </script>
+</body>
+</html>
+
+<body><!-- Input boxes for first and last name -->
+    <div class="input-field">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" placeholder="Enter 1st Name">
+    </div>
+    <div class="input-field">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" placeholder="Enter Last Name">
+    </div>
+  
+    <!-- Input box for ZIP code -->
+    <div class="input-field">
+      <label for="zipCode">ZIP Code:</label>
+      <input type="text" id="zipCode" placeholder="Enter 5-Digit ZIP Code">
+    </div>
+  
+    <!-- Button To Trigger Validation -->
+    <button onclick="validateInput()">SUBMIT</button>
+  
+    <!-- display warnings &/or the secret message -->
+    <div id="message"></div>
+  
+  <script>
+  // Function to validate input and display the secret message
+  function validateInput() {
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var fullName = firstName + ' ' + lastName;
+    var zipCode = document.getElementById('zipCode').value;
+    var messageElement = document.getElementById('message');
+  
+    // Check if the full name is more than 20 characters
+    if (fullName.length > 20) {
+      messageElement.innerHTML = '<p class="warning">Full Name May Not Exceed 20 Characters.</p>';
+      return;
+    }
+  
+    // Check if the ZIP code is a 5-digit number
+    if (!/^\d{5}$/.test(zipCode)) {
+      messageElement.innerHTML = '<p class="warning">Enter A Valid 5-Digit ZIP Code.</p>';
+      return;
+    }
+  
+    // If inputs are valid, display the secret message
+    messageElement.textContent = 'Congratulations! The Secret Message Is: "UAT Rocks 2024!"';
+  }
+  </script>
+  </body>
+  </html>
+  
+  </head>
+  
+  <body>
+  <div class="center"></body>
